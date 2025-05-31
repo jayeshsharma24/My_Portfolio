@@ -138,104 +138,111 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-500 px-4">
-      <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-        <div
-          className="hidden md:block bg-[url('/login.jpg')] bg-cover bg-center"
-        ></div>
+    <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-100 to-purple-200 px-4 animate-fade-in">
+    <div className="w-full max-w-4xl bg-white shadow-2xl rounded-3xl grid grid-cols-1 md:grid-cols-2 overflow-hidden transform transition duration-500 hover:scale-[1.01]">
+      <div className="hidden md:block bg-[url('/login.jpg')] bg-cover bg-center relative">
+        <div className="absolute inset-0  bg-opacity-30"></div>
+      </div>
 
-        <div className="p-8 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            {{
-              login: 'Login',
-              signup: 'Sign Up',
-              forgot: 'Recover Password',
-              otp: 'Enter OTP',
-              reset: 'Reset Password',
-            }[view]}
-          </h2>
+      <div className="p-8 flex flex-col justify-center animate-slide-up">
+        <h1 className="text-4xl font-extrabold text-center text-blue-700 mb-3 tracking-wide">
+          Jayesh's Portfolio Website
+        </h1>
 
-          <form className="space-y-5" onSubmit={handleSubmit}>
-            {view === 'signup' && (
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full border-b-2 border-gray-300 focus:border-blue-600 focus:outline-none py-2 placeholder:text-gray-400"
-                required
-              />
-            )}
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
+          {{
+            login: 'Login to Your Account',
+            signup: 'Create a New Account',
+            forgot: 'Recover Your Password',
+            otp: 'Verify OTP',
+            reset: 'Set New Password',
+          }[view]}
+        </h2>
 
-            {(view === 'login' || view === 'signup' || view === 'forgot') && (
-              <input
-                type="email"
-                placeholder="Email or User ID"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b-2 border-gray-300 focus:border-blue-600 focus:outline-none py-2 placeholder:text-gray-400"
-                required
-              />
-            )}
-
-            {(view === 'login' || view === 'signup' || view === 'reset') && (
-              <input
-                type="password"
-                placeholder={view === 'reset' ? 'New Password' : 'Password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b-2 border-gray-300 focus:border-blue-600 focus:outline-none py-2 placeholder:text-gray-400"
-                required
-              />
-            )}
-
-            {(view === 'signup' || view === 'reset') && (
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full border-b-2 border-gray-300 focus:border-blue-600 focus:outline-none py-2 placeholder:text-gray-400"
-                required
-              />
-            )}
-
-            {view === 'otp' && (
-              <input
-                type="text"
-                placeholder="Enter OTP"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-                className="w-full border-b-2 border-gray-300 focus:border-blue-600 focus:outline-none py-2 placeholder:text-gray-400"
-                required
-              />
-            )}
-
-            <button
-              type="submit"
-              disabled={loading}
-              className={`w-full ${
-                loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
-              } text-white font-semibold py-2 rounded-md transition duration-300`}
-            >
-              {{
-                login: 'Login',
-                signup: 'Create Account',
-                forgot: 'Send OTP',
-                otp: 'Verify OTP',
-                reset: 'Reset Password',
-              }[view]}
-            </button>
-          </form>
-
-          {message && (
-            <p className="text-center text-red-500 mt-2 font-semibold">{message}</p>
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          {view === 'signup' && (
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="animated-input"
+              required
+            />
           )}
 
-          {/* Navigation links */}
+          {(view === 'login' || view === 'signup' || view === 'forgot') && (
+            <input
+              type="email"
+              placeholder="Email or User ID"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="animated-input"
+              required
+            />
+          )}
+
+          {(view === 'login' || view === 'signup' || view === 'reset') && (
+            <input
+              type="password"
+              placeholder={view === 'reset' ? 'New Password' : 'Password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="animated-input"
+              required
+            />
+          )}
+
+          {(view === 'signup' || view === 'reset') && (
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="animated-input"
+              required
+            />
+          )}
+
+          {view === 'otp' && (
+            <input
+              type="text"
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              className="animated-input"
+              required
+            />
+          )}
+
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full ${
+              loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
+            } text-white font-semibold py-2 rounded-lg transition duration-300 shadow-md`}
+          >
+            {{
+              login: 'Login',
+              signup: 'Create Account',
+              forgot: 'Send OTP',
+              otp: 'Verify OTP',
+              reset: 'Reset Password',
+            }[view]}
+          </button>
+        </form>
+
+        {message && (
+          <p className="text-center text-red-500 mt-2 font-medium animate-pulse">
+            {message}
+          </p>
+        )}
+
+        {/* Navigation links */}
+        <div className="text-sm text-center mt-6 text-gray-700 space-y-2">
           {view === 'login' && (
             <>
-              <p className="text-sm text-center mt-4 text-gray-600">
+              <p>
                 Forgot your password?{' '}
                 <button
                   onClick={() => {
@@ -247,7 +254,7 @@ const Login = () => {
                   Click here
                 </button>
               </p>
-              <p className="text-sm text-center mt-2 text-gray-600">
+              <p>
                 Don't have an account?{' '}
                 <button
                   onClick={() => {
@@ -263,7 +270,7 @@ const Login = () => {
           )}
 
           {view === 'signup' && (
-            <p className="text-sm text-center mt-4 text-gray-600">
+            <p>
               Already have an account?{' '}
               <button
                 onClick={() => {
@@ -278,7 +285,7 @@ const Login = () => {
           )}
 
           {(view === 'forgot' || view === 'otp' || view === 'reset') && (
-            <p className="text-sm text-center mt-4 text-gray-600">
+            <p>
               Back to{' '}
               <button
                 onClick={() => {
@@ -294,6 +301,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

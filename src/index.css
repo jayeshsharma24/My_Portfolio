@@ -81,3 +81,39 @@ body {
   animation: marquee 20s linear infinite;
   will-change: transform;
 }
+.animated-input {
+  @apply w-full px-3 py-2 text-gray-700 placeholder-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 bg-transparent transition duration-300 ease-in-out;
+  animation: inputFadeIn 0.5s ease forwards;
+  position: relative;
+}
+
+/* Input animation on mount */
+@keyframes inputFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add optional hover glow */
+.animated-input:hover {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Focus ring animation */
+.animated-input:focus {
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Optional: floating label effect */
+.animated-input::placeholder {
+  color: #9ca3af;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  transform: translateY(0);
+  opacity: 1;
+}
