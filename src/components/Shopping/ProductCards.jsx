@@ -1,39 +1,85 @@
-import React from 'react' 
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
 import { toast } from 'react-toastify';
-const ProductCards = (props) => {
-    
-      const carts = useSelector(store => store.cart.items);
-    const {id, name, price, image, slug} = props.data;
-    const dispatch = useDispatch();
-    
-    const handleAddToCart = () => {
-        dispatch(addToCart({
-            productId: id,
-            quantity: 1
-        }));
-        toast.success('Item added to cart!');
-    }
-    return (
-    <div className='bg-white p-5 rounded-xl shadow-sm w-[70%] flex justify-between flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]'>
-        <Link to={slug}>
-        {/* className='w-full h-80 object-cover object-top drop-shadow-[0_80px_30px_#0007]' */}
-            <img src={image} alt=''  className=" h-auto max-h-[200px] sm:max-h-[220px] md:max-h-[240px] lg:max-h-[260px] object-cover rounded-t-lg"/>
-        </Link>
-        <h3 className='text-2xl py-3 text-center font-medium'>{name}</h3>
-        <div className='flex justify-between items-center'>
-            <p>
-                <span className='text-2xl font-medium'>₹{price}</span>
-            </p>
-            <button className='bg-gray-300 p-2 rounded-md text-sm hover:bg-gray-400 flex gap-2' onClick={handleAddToCart}>
-                <img src="https://img.icons8.com/?size=60&id=BBhHIwJINbBl&format=png&color=000000" alt="" className='w-5'/>
-                Add To Cart
-            </button>
-        </div>
-    </div>
-  )
-}
 
-export default ProductCards
+const ProductCards = (props) => {
+  const carts = useSelector((store) => store.cart.items);
+  const { id, name, price, image, slug } = props.data;
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        productId: id,
+        quantity: 1,
+      })
+    );
+    toast.success('Item added to cart!');
+  };
+
+  return (
+    <div
+      className="
+        bg-white rounded-lg shadow border border-gray-200
+        w-full max-w-[300px] sm:max-w-[340px] md:max-w-[360px]
+        flex flex-col
+        overflow-hidden
+        transition-transform duration-300 ease-in-out
+        hover:scale-105 hover:shadow-lg
+        mx-auto
+      "
+    >
+      <Link to={slug} className="block relative w-full" style={{ paddingTop: '75%' }}>
+        {/* 4:3 Aspect Ratio (height = 75% of width) */}
+        <img
+          src={image}
+          alt={name}
+          className="
+            absolute top-0 left-0 w-full h-full
+            object-contain rounded-t-lg
+            transition-transform duration-500 ease-in-out
+            hover:scale-110
+          "
+          loading="lazy"
+        />
+      </Link>
+
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className="text-md sm:text-lg font-semibold mb-2 text-center md:text-left text-gray-900 line-clamp-2">
+          {name}
+        </h3>
+
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between mt-auto gap-3 sm:gap-0">
+          <p className="text-xl font-bold text-amber-600">₹{price}</p>
+
+          <button
+            onClick={handleAddToCart}
+            className="
+              bg-amber-500 text-white
+              px-4 py-2 rounded-md
+              text-xs sm:text-sm font-semibold
+              hover:bg-amber-600
+              focus:outline-none focus:ring-2 focus:ring-amber-400
+              flex items-center gap-2
+              transition-colors duration-200
+              w-full sm:w-auto
+            "
+            aria-label={`Add ${name} to cart`}
+          >
+            <img
+              src="https://img.icons8.com/?size=30&id=BBhHIwJINbBl&format=png&color=ffffff"
+              alt=""
+              className="w-4"
+              aria-hidden="true"
+            />
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCards;

@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div>
         <main className={` max-w-full m-auto p-5 transform transition-transform duration-500 rounded-lg dark:bg-gray-900 shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]
-        ${statusTabCart === false ? "" : "-translate-x-56" }`}>
+        ${statusTabCart === false ? "" : "" }`}>
             <Product/>
             
         </main>

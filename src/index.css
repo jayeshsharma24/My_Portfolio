@@ -66,3 +66,18 @@ body {
 .toast {
   animation: fadeInOut 3s ease-in-out forwards;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}

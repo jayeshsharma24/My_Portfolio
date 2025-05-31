@@ -1,32 +1,38 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
     title: 'Portfolio Website: Fully Responsive',
     description: 'This website is a portfolio, or we can say a kind of digital resume.',
-    image: './src/assets/project-1.png',
+    image: '/project-1.png',
     readMoreLink: '#',
     sourceCodeLink: '#',
   },
   {
-    title: 'Noteworthy Tech Acquisitions 2021',
-    description: 'The biggest enterprise tech acquisitions of 2021 in reverse order.',
-    image: './src/assets/project-2.png',
+    title: 'ToDo List Application',
+    description: 'The Todo list application will store your daily routone tasks..',
+    image: '/Project-2.png',
     readMoreLink: '#',
     sourceCodeLink: '#',
   },
   {
     title: 'Portfolio Website: Fully Responsive',
     description: 'This website is a portfolio, or we can say a kind of digital resume.',
-    image: './src/assets/project-1.png',
+    image: '/project-1.png',
     readMoreLink: '#',
     sourceCodeLink: '#',
   },
 ];
 
 const Project = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,     // animate only once
+    threshold: 0.2         // 20% of the component is visible
+  });
   return (
-    <div name="Projects" className="  space-y-12 p-5 sm:p-6 lg:p-10 bg-white dark:bg-gray-900 m-3 rounded-lg animate-fadeIn shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]">
+    <motion.div name="Projects" className="  space-y-12 p-5 sm:p-6 lg:p-10 bg-white dark:bg-gray-900 m-3 rounded-lg animate-fadeIn shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]">
       <div className="text-white flex justify-center items-center gap-3">
         <h2 className="text-4xl sm:text-5xl font-bold">Projects</h2>
         <img
@@ -38,7 +44,7 @@ const Project = () => {
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="w-full max-w-[300px] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]"
           >
@@ -71,10 +77,10 @@ const Project = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

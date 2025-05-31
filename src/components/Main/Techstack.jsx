@@ -4,7 +4,7 @@ const techStack = [
   { name: 'Docker', img: 'https://img.icons8.com/?size=100&id=LdUzF8b5sz2R&format=png&color=000000'},
   { name: 'JavaScript', img: 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000' },
   { name: 'Terraform', img: 'https://img.icons8.com/?size=100&id=kEkT1u7zTDk5&format=png&color=000000' },
-  { name: 'ArgoCD', img: './src/assets/Argo CD.png' },
+  { name: 'ArgoCD', img: '/Argo CD.png' },
   { name: 'Node.js', img: 'https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000' },
   { name: 'CSS', img: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000' },
   { name: 'AWS', img: 'https://img.icons8.com/?size=100&id=33039&format=png&color=000000' },

@@ -15,7 +15,7 @@ const SocialMediaLinks = () => {
       dark:bg-gray-900
       rounded-xl
       shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]
-      z-50
+      
       w-[60px] sm:w-[70px] md:w-[80px] lg:w-[100px]
     "
   >

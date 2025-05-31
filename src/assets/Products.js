@@ -8,7 +8,7 @@ export const products = [
         name: 'Docker Notes',
         price: 499,
         image: imageProduct1,
-        description: 'Mollit anim consectetur adipisicing aute pariatur ad mollit ad. Officia amet aliqua non laborum dolore sint sit eu sit sunt laboris. Dolor tempor ipsum culpa Lorem ipsum ullamco ullamco dolor sit do. Do proident quis ad laborum et proident laborum. Non voluptate eiusmod aute labore ea aute.',
+        description: "Docker is a powerful platform that simplifies the process of developing, packaging, and deploying applications by using containers. It provides an isolated environment, known as a container, where applications can run consistently across different platforms. Docker's popularity stems from its ability to ensure that software runs the same way, regardless of where it's deployed.",
         slug: 'Docker Notes'
     },
     {
@@ -16,7 +16,7 @@ export const products = [
         name: 'AWS Notes',
         price: 749,
         image: imageProduct2,
-        description: 'Mollit anim consectetur adipisicing aute pariatur ad mollit ad. Officia amet aliqua non laborum dolore sint sit eu sit sunt laboris. Dolor tempor ipsum culpa Lorem ipsum ullamco ullamco dolor sit do. Do proident quis ad laborum et proident laborum. Non voluptate eiusmod aute labore ea aute.',
+        description:"Amazon Web Service (AWS) is the world’s leading cloud computing platform by Amazon. It offers on-demand computing services, such as virtual servers and storage, that can be used to build and run applications and websites. AWS is known for its security, reliability, and flexibility, which makes it a popular choice for organizations that need to store and process sensitive data." ,
         slug: 'AWS Notes'
     },
     {
@@ -24,7 +24,7 @@ export const products = [
         name: 'Kubernetes Notes',
         price: 899,
         image: imageProduct3,
-        description: 'Mollit anim consectetur adipisicing aute pariatur ad mollit ad. Officia amet aliqua non laborum dolore sint sit eu sit sunt laboris. Dolor tempor ipsum culpa Lorem ipsum ullamco ullamco dolor sit do. Do proident quis ad laborum et proident laborum. Non voluptate eiusmod aute labore ea aute.',
+        description: "Kubernetes (also called K8s) is an open-source platform that helps you automates the deployment, scaling, and management of containerized applications. In simple words, if you're running a lot of apps using containers (like with Docker), Kubernetes helps you organize and control them efficiently just like a traffic controller for your apps.",
         slug: 'Kubernetes Notes'
     },
    

@@ -1,6 +1,9 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 const ContactPage = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const {
@@ -23,12 +26,10 @@ const ContactPage = () => {
   const onSubmit = async (data) => {
     try {
       let r = await fetch("http://localhost:3000/data", {
-        method: "post", headers: {
+        method: "POST", headers: {
           "Content-Type": "application/json",
         }, body: JSON.stringify(data)
       })
-      // let res = await r.text()
-      // console.log(data, res)
       const res = await r.json();
       console.log("Response Status:",r.status);
       console.log("Response Data:",res);
@@ -46,9 +47,13 @@ const ContactPage = () => {
     }
   }
 
+  const [ref, inView] = useInView({
+  triggerOnce: true,
+  threshold: 0.2,
+});
 
   return (
-    <div name="Contact" className="relative flex items-start justify-center m-3 p-4 sm:p-6 lg:p-8 rounded-lg dark:bg-gray-900 shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]">
+    <motion.div id="Contact" name="Contact" className="relative flex items-start justify-center m-3 p-4 sm:p-6 lg:p-8 rounded-lg dark:bg-gray-900 shadow-[0_4px_6px_-1px_rgba(255,255,255,0.6)]">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-8 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -110,7 +115,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
 
 
   )
