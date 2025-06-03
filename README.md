@@ -21,7 +21,7 @@ A modern and dynamic **Portfolio Website** built with **React (Vite)**, **MongoD
 - 🛒 **eCommerce Section**
   - Display and sell products (digital or physical)
 - 📚 **Note Selling System**
-  - Upload, manage, and sell study notes or documents
+  - Sell study notes or documents
 - 📬 **Contact Page**
   - Users can send direct inquiries or messages
 - ⚡ **Fully Responsive UI**
