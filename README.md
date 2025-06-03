@@ -1,6 +1,3 @@
-# React + Vite : Portfolio Project website
-
-
 # 🧑‍💻 My Portfolio Website
 
 A modern and dynamic **Portfolio Website** built with **React (Vite)**, **MongoDB**, **Mongoose**, and **TailwindCSS**. This project showcases my skills as a full-stack developer with integrated features like an **eCommerce system**, **note selling**, a **contact page**, and **user authentication** using **Email OTP verification**.
@@ -36,5 +33,12 @@ A modern and dynamic **Portfolio Website** built with **React (Vite)**, **MongoD
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
-   cd your-portfolio
+   git clone https://github.com/jayeshsharma24/My_Portfolio.git
+   cd My_Portfolio
+   npm i
+   #For client side
+   npm run dev
+   #For Server Side
+   nodemon Backend/server.js
+   
+
