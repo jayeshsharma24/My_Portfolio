@@ -1,4 +1,4 @@
-// dataRoute.js
+
 import express from "express";
 
 export default function dataRoute(db) {
@@ -31,9 +31,9 @@ export default function dataRoute(db) {
     next();
   });
 
-  const Data = db.model("Data", dataSchema); // ✅ Bound to portfolioDb
+  const Data = db.model("Data", dataSchema); 
 
-  // Example GET route
+
   router.get("/", async (req, res) => {
     try {
       const allData = await Data.find();
